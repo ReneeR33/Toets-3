@@ -8,7 +8,7 @@ void SetPinModeLed(){
   pinMode (LEDBlauwPin, OUTPUT);
 }
 
-void SetColor(int r, int g, int b) {
+void SetColor(float r, float g, float b) {
   analogWrite(LEDRoodPin, r);
   analogWrite(LEDGroenPin, g);
   analogWrite(LEDBlauwPin, b);
