@@ -15,7 +15,7 @@ void SetColor(int r, int g, int b) {
 }
 
 void ChangeColor(float temperature){
-  temperature.round();
+  //temperature.round();
   temperature *= 12,75;
   if(temperature <= 255){
     SetColor(temperature, 0, 255);
