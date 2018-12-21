@@ -28,11 +28,3 @@ String BuildMessage() {
     }
   }
 }
-
-void CheckIfCommand() {
-  BuildMessage() = Message;
-  if(Message == "TEMPERATURE"){
-  Serial.print(Temperature())
-    
-  }
-}

@@ -7,6 +7,12 @@ void setup() {
 }
 
 void loop() {
-  CheckForCommunication();
+  String message = BuildMessage(); 
+  if(message == "TEMPERATURE"){
+     ChangeColorT(Temperature());
+  }
+  else if(message == "HUMIDITY"){
+    //SetColorH(Humidity());
+  }
   
 }

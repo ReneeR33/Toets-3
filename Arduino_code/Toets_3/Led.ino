@@ -14,7 +14,7 @@ void SetColor(float r, float g, float b) {
   analogWrite(LEDBlauwPin, b);
 }
 
-void ChangeColor(float temperature){
+void ChangeColorT(float temperature){
   temperature *= 12,75;
   if(temperature <= 255){
     SetColor(temperature, 0, 255);
