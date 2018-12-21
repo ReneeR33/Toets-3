@@ -1,6 +1,5 @@
-String message = "";
-
-void CheckForCommunication() {
+String BuildMessage() {
+  String message = "";
   Serial.begin(9600);
   bool startReceived = false;
   while (true) {
@@ -16,7 +15,7 @@ void CheckForCommunication() {
 
       if (receivedCharacter == '%') {
         startReceived = false;
-        CheckIfCommand();
+        return message;
       }
 
       if (startReceived) {
@@ -31,8 +30,9 @@ void CheckForCommunication() {
 }
 
 void CheckIfCommand() {
-  if(message == "TEMPERATURE"){
-    //
-    message = ""
+  BuildMessage() = Message;
+  if(Message == "TEMPERATURE"){
+  Serial.print(Temperature())
+    
   }
 }
