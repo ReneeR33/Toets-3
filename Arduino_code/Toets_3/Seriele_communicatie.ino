@@ -16,6 +16,7 @@ void CheckForCommunication() {
 
       if (receivedCharacter == '%') {
         startReceived = false;
+        CheckIfCommand();
       }
 
       if (startReceived) {
@@ -26,5 +27,12 @@ void CheckForCommunication() {
         startReceived = true;
       }
     }
+  }
+}
+
+void CheckIfCommand() {
+  if(message == "TEMPERATURE"){
+    //
+    message = ""
   }
 }
