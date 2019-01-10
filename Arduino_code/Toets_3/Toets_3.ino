@@ -13,8 +13,8 @@ void setup() {
 
 void loop() {
 
-  
-Serial.println(Temperature())
+
+  Serial.println(Temperature())
 
   Serial.println(CheckMode());
 }
