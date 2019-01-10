@@ -44,27 +44,3 @@ String CheckMode() {
     return "HUMIDITY";
   }
 }
-
-void TemperatureMode() {
-  Serial.println(Temperature());
-}
-
-void HumidityMode() {
-  Serial.println(Humidity());
-
-  String message = BuildMessage();
-  if (message == "TEMPERATURE") {
-    ChangeColorT(Temperature());
-
-
-  String message = BuildMessage(); 
-  if(message == "TEMPERATURE"){
-     ChangeColorT(Temperature());
-
-  }
-  else if (message == "HUMIDITY") {
-    //SetColorH(Humidity());
-  }
-
-
-}
