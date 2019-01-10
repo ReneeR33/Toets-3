@@ -1,6 +1,6 @@
+
 String BuildMessage() {
   String message = "";
-  Serial.begin(9600);
   bool startReceived = false;
   while (true) {
 
@@ -9,30 +9,38 @@ String BuildMessage() {
     int incomingByte = 0;
 
 
-    if (Serial.available() > 0) {
-      incomingByte = Serial.read();
-      char receivedCharacter = (char) incomingByte;
+    incomingByte = Serial.read();
+    char receivedCharacter = (char) incomingByte;
 
-      if (receivedCharacter == '%') {
-        startReceived = false;
-        return message;
-      }
+    if (receivedCharacter == '%') {
+      startReceived = false;
+      return message;
+    }
 
-      if (startReceived) {
-        message += receivedCharacter;
-      }
+    if (startReceived) {
+      message += receivedCharacter;
+    }
 
-      if (receivedCharacter == '#') {
-        startReceived = true;
-      }
+    if (receivedCharacter == '#') {
+      startReceived = true;
     }
   }
 }
 
-void CheckIfCommand() {
-  BuildMessage() = Message;
-  if(Message == "TEMPERATURE"){
-  Serial.print(Temperature())
-    
+bool IsValidMessage(String input){
+  if(input == "TEMPERATURE" || input == "HUMIDITY"){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+bool IsSerialDataIncoming() {
+  if (Serial.available() > 0) {
+    return true;
+  }
+  else{
+    return false;
   }
 }
