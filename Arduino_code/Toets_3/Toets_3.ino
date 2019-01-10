@@ -1,4 +1,3 @@
-#include <DHT.h>
 String currentMode = "TEMPERATURE";
 String message;
 void setup() {

@@ -1,4 +1,4 @@
-#include "DHT.h"
+#include <DHT.h>
 #define DHTPIN A0 
 #define DHTTYPE DHT22 
 
