@@ -26,10 +26,6 @@ String BuildMessage() {
     }
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 63a32b1e0458a065c932eb5332407cff2c7a4b49
 
 bool IsValidMessage(String input) {
   if (input == "TEMPERATURE" || input == "HUMIDITY") {
