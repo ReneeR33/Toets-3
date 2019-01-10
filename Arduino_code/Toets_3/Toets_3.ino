@@ -12,7 +12,6 @@ void setup() {
 
 
 void loop() {
-<<<<<<< HEAD
   Serial.println("loop");
   if (IsSerialDataIncoming()) {
       Serial.println("input");
@@ -45,7 +44,7 @@ void TemperatureMode() {
 
 void HumidityMode() {
   Serial.println(Humidity());
-=======
+
   String message = BuildMessage(); 
   if(message == "TEMPERATURE"){
      ChangeColorT(Temperature());
@@ -54,5 +53,5 @@ void HumidityMode() {
     //SetColorH(Humidity());
   }
   
->>>>>>> 5117495e4b0074f38d82a7f9fdc4e78b3d450c8c
+
 }

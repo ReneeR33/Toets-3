@@ -26,7 +26,7 @@ String BuildMessage() {
     }
   }
 }
-<<<<<<< HEAD
+
 
 bool IsValidMessage(String input){
   if(input == "TEMPERATURE" || input == "HUMIDITY"){
@@ -45,5 +45,3 @@ bool IsSerialDataIncoming() {
     return false;
   }
 }
-=======
->>>>>>> 5117495e4b0074f38d82a7f9fdc4e78b3d450c8c
