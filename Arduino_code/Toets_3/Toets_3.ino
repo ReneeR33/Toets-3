@@ -12,30 +12,32 @@ void setup() {
 
 
 void loop() {
-<<<<<<< HEAD
-  Serial.println("loop");
+
+
+
+  Serial.println(CheckMode());
+}
+
+void ChangeMode() {
   if (IsSerialDataIncoming()) {
-      Serial.println("input");
     if (IsValidMessage(BuildMessage())) {
-        Serial.println("valid");
       currentMode = message;
-      CheckMode();
     }
-    else {
-      CheckMode();
-    }
-  }
-  else {
-    CheckMode();
   }
 }
 
-void CheckMode() {
+String CheckMode() {
+  ChangeMode();
+
   if (currentMode == "TEMPERATURE") {
     //Temp mode
+
+    return "TEMPERATURE";
   }
   else if (currentMode == "HUMIDITY") {
     //Hum mode
+
+    return "HUMIDITY";
   }
 }
 
@@ -45,14 +47,12 @@ void TemperatureMode() {
 
 void HumidityMode() {
   Serial.println(Humidity());
-=======
-  String message = BuildMessage(); 
-  if(message == "TEMPERATURE"){
-     ChangeColorT(Temperature());
+  String message = BuildMessage();
+  if (message == "TEMPERATURE") {
+    ChangeColorT(Temperature());
   }
-  else if(message == "HUMIDITY"){
+  else if (message == "HUMIDITY") {
     //SetColorH(Humidity());
   }
-  
->>>>>>> 5117495e4b0074f38d82a7f9fdc4e78b3d450c8c
+
 }

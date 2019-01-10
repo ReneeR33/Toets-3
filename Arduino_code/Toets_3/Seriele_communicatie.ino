@@ -3,7 +3,7 @@ String BuildMessage() {
   String message = "";
   bool startReceived = false;
   while (true) {
-
+    Serial.println("serial while");
     char startChar = '#';
     char stopChar = '%';
     int incomingByte = 0;
@@ -26,13 +26,12 @@ String BuildMessage() {
     }
   }
 }
-<<<<<<< HEAD
 
-bool IsValidMessage(String input){
-  if(input == "TEMPERATURE" || input == "HUMIDITY"){
+bool IsValidMessage(String input) {
+  if (input == "TEMPERATURE" || input == "HUMIDITY") {
     return true;
   }
-  else{
+  else {
     return false;
   }
 }
@@ -41,9 +40,7 @@ bool IsSerialDataIncoming() {
   if (Serial.available() > 0) {
     return true;
   }
-  else{
+  else {
     return false;
   }
 }
-=======
->>>>>>> 5117495e4b0074f38d82a7f9fdc4e78b3d450c8c
