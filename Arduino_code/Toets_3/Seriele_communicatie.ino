@@ -1,4 +1,3 @@
-
 String BuildMessage() {
   String message = "";
   bool startReceived = false;

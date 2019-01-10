@@ -3,21 +3,23 @@ String currentMode = "TEMPERATURE";
 String message;
 void setup() {
   Serial.begin(9600);
-  //StartMeasuring();
   //if (IsSerialDataIncoming()) {
-    //message = BuildMessage();
+  //message = BuildMessage();
   //}
-  SetColor(255,0,0);
-
+  StartMeasuring();
+  StartScreen();
 }
 
 
 void loop() {
-
-
-  //Serial.println(Temperature())
-
-  //Serial.println(CheckMode());
+  if (currentMode == "TEMPERATURE") {
+    ValueToScreen(Temperature());
+    ChangeColorT(Temperature());
+  }
+  else if(currentMode == "HUMIDITY"){
+    ValueToScreen(Humidity());
+    ChangeColorH(Humidity());
+  }
 }
 
 void ChangeMode() {
@@ -28,20 +30,5 @@ void ChangeMode() {
     if (IsValidMessage(BuildMessage())) {
       currentMode = message;
     }
-  }
-}
-
-String CheckMode() {
-  ChangeMode();
-
-  if (currentMode == "TEMPERATURE") {
-    //Temp mode
-
-    return "TEMPERATURE";
-  }
-  else if (currentMode == "HUMIDITY") {
-    //Hum mode
-
-    return "HUMIDITY";
   }
 }
