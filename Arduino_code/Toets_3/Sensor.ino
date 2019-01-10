@@ -12,3 +12,8 @@ float Temperature(){
   float t = dht.readTemperature();
   return t;
 }
+
+float Humidity(){
+  float h = dht.readHumidity();
+  return h;
+}
