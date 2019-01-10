@@ -3,10 +3,11 @@ String currentMode = "TEMPERATURE";
 String message;
 void setup() {
   Serial.begin(9600);
-  StartMeasuring();
-  if (IsSerialDataIncoming()) {
-    message = BuildMessage();
-  }
+  //StartMeasuring();
+  //if (IsSerialDataIncoming()) {
+    //message = BuildMessage();
+  //}
+  SetColor(255,0,0);
 
 }
 
@@ -14,9 +15,9 @@ void setup() {
 void loop() {
 
 
-  Serial.println(Temperature())
+  //Serial.println(Temperature())
 
-  Serial.println(CheckMode());
+  //Serial.println(CheckMode());
 }
 
 void ChangeMode() {
