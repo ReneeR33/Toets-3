@@ -1,6 +1,6 @@
-#define LEDRoodPin 11
-#define LEDGroenPin 9
-#define LEDBlauwPin 10
+#define LEDRoodPin 6
+#define LEDGroenPin 5
+#define LEDBlauwPin 3
 
 void SetPinModeLed() {
   pinMode (LEDRoodPin, OUTPUT);
