@@ -1,5 +1,3 @@
-float previousValue;
-
 String BuildMessage() {
   String message = "";
   bool startReceived = false;
@@ -28,7 +26,7 @@ String BuildMessage() {
 }
 
 bool IsValidMessage(String input) {
-  if (input == "TEMPERATURE" || input == "HUMIDITY" || input == "CELSIUS" || input == "FAHRENHEIT") {
+  if (input == "TEMPERATURE_C" || input == "TEMPERATURE_F" || input == "HUMIDITY") {
     return true;
   }
   else {
@@ -61,16 +59,8 @@ String ChangeMode(String currentMode) {
   }
 }
 
-void PrintValuesToSerialPort(float value, String type) {
-  if ((previousValue != NULL) && (previousValue != value)) {
-    Serial.print(type);
-    Serial.print(": ");
-    Serial.println(value);
-  }
-  previousValue = value;
-}
-
-void PrintUnitToSerialPort(String unit){
-  Serial.print("UNIT: ");
-  Serial.println(unit);
+void PrintValuesToSerialPort(float value, String type){
+  Serial.print(type);
+  Serial.print(": ");
+  Serial.println(value);
 }

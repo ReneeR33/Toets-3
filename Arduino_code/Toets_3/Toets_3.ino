@@ -22,13 +22,4 @@ void loop() {
     ChangeColorH(hum);
     PrintValuesToSerialPort(hum, currentInput);
   }
-  else if (currentInput == "CELSIUS") {
-    tempUnit = currentInput;
-  }
-  else if (currentInput == "FAHRENHEIT"){
-    tempUnit = currentInput;
-  }
-  else if (currentInput == "TEMPUNIT"){
-    PrintUnitToSerialPort(currentInput);
-  }
 }
