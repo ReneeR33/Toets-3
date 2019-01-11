@@ -1,3 +1,5 @@
+float previousValue;
+
 String BuildMessage() {
   String message = "";
   bool startReceived = false;
@@ -59,10 +61,13 @@ String ChangeMode(String currentMode) {
   }
 }
 
-void PrintValuesToSerialPort(float value, String type){
-  Serial.print(type);
-  Serial.print(": ");
-  Serial.println(value);
+void PrintValuesToSerialPort(float value, String type) {
+  if ((previousValue != NULL) && (previousValue != value)) {
+    Serial.print(type);
+    Serial.print(": ");
+    Serial.println(value);
+  }
+  previousValue = value;
 }
 
 void PrintUnitToSerialPort(String unit){
