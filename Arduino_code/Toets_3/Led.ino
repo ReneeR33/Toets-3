@@ -16,18 +16,21 @@ float B(){
   return blue;
 }
 
+
 void SetPinModeLed() {
   pinMode (LEDRoodPin, OUTPUT);
   pinMode (LEDGroenPin, OUTPUT);
   pinMode (LEDBlauwPin, OUTPUT);
 }
 
+//change the color of the RGB LED
 void SetColor(float r, float g, float b) {
   analogWrite(LEDRoodPin, r);
   analogWrite(LEDGroenPin, g);
   analogWrite(LEDBlauwPin, b);
 }
 
+//converts the temperature to an RGB value
 void ChangeColorT(float temperature) {
   temperature *= 12, 75;
   if ((temperature >= 0) && (temperature <= 255)) {

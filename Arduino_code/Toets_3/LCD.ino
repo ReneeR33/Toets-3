@@ -9,7 +9,7 @@ TFT myScreen = TFT(CS, DC, RESET);
 char printout[5];
 char previous[5];
 
-
+//turn on screen
 void StartScreen() {
   myScreen.begin();
   myScreen.background(0, 0, 0);
@@ -17,6 +17,7 @@ void StartScreen() {
   myScreen.setTextSize(6);
 }
 
+//display values on screen
 void ValueToScreen(float value) {
   int i;
   String stringValue = String(value);
