@@ -1,5 +1,4 @@
-String currentInput = "TEMPERATURE";
-String tempUnit = "CELSIUS";
+String currentInput = "TEMPERATURE_F";
 
 void setup() {
   Serial.begin(9600);
@@ -10,16 +9,19 @@ void setup() {
 
 void loop() {
   currentInput = ChangeMode(currentInput);
-  if (currentInput == "TEMPERATURE") {
+  if ((currentInput == "TEMPERATURE_C") || (currentInput == "TEMPERATURE_F")) {
     float temp = Temperature();
-    ValueToScreen(temp);
     ChangeColorT(temp);
+    if(currentInput == "TEMPERATURE_F"){
+      temp = ToFahrenheit(temp);
+    }
+    ValueToScreen(temp);
     PrintValuesToSerialPort(temp, currentInput);
   }
   else if (currentInput == "HUMIDITY") {
     float hum = Humidity();
-    ValueToScreen(hum);
     ChangeColorH(hum);
+    ValueToScreen(hum);
     PrintValuesToSerialPort(hum, currentInput);
   }
 }
