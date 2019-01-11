@@ -1,4 +1,5 @@
-String currentMode = "TEMPERATURE";
+String currentInput = "TEMPERATURE";
+String tempUnit = "CELSIUS";
 
 void setup() {
   Serial.begin(9600);
@@ -8,17 +9,26 @@ void setup() {
 
 
 void loop() {
-  currentMode = ChangeMode(currentMode);
-  if (currentMode == "TEMPERATURE") {
+  currentInput = ChangeMode(currentInput);
+  if (currentInput == "TEMPERATURE") {
     float temp = Temperature();
     ValueToScreen(temp);
     ChangeColorT(temp);
-    PrintValuesToSerialPort(temp, currentMode);
+    PrintValuesToSerialPort(temp, currentInput);
   }
-  else if (currentMode == "HUMIDITY") {
+  else if (currentInput == "HUMIDITY") {
     float hum = Humidity();
     ValueToScreen(hum);
     ChangeColorH(hum);
-    PrintValuesToSerialPort(hum, currentMode);
+    PrintValuesToSerialPort(hum, currentInput);
+  }
+  else if (currentInput == "CELSIUS") {
+    tempUnit = currentInput;
+  }
+  else if (currentInput == "FAHRENHEIT"){
+    tempUnit = currentInput;
+  }
+  else if (currentInput == "TEMPUNIT"){
+    PrintUnitToSerialPort(currentInput);
   }
 }
