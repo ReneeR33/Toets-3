@@ -29,7 +29,7 @@ void SetColor(float r, float g, float b) {
 }
 
 void ChangeColorT(float temperature) {
-  temperature *= 12, 75;
+  temperature *= 12.75;
   if ((temperature >= 0) && (temperature <= 255)) {
     SetColor(temperature, 0, 255);
     red = temperature; green = 0; blue = 255;
@@ -50,7 +50,7 @@ void ChangeColorT(float temperature) {
 }
 
 void ChangeColorH(float humidity) {
-  humidity *= 5,1;
+  humidity *= 5.1;
   if (humidity <= 255) {
     SetColor(0, 255, humidity);
     red = 0; green = 255; blue = humidity;
