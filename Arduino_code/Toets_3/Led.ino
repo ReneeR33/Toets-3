@@ -47,7 +47,6 @@ void ChangeColorT(float temperature) {
     SetColor(255, 0, 0);
     red = 255; green = 0; blue = 0;
   }
-  Serial.println(temperature);
 }
 
 void ChangeColorH(float humidity) {
@@ -61,5 +60,4 @@ void ChangeColorH(float humidity) {
     SetColor(0, humidity, 255);
     red = 0; green = humidity; blue = 255;
   }
-  Serial.println(humidity);
 }

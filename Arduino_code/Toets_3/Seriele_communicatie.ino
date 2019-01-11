@@ -2,7 +2,6 @@ String BuildMessage() {
   String message = "";
   bool startReceived = false;
   while (true) {
-    Serial.println("serial while");
     char startChar = '#';
     char stopChar = '%';
     int incomingByte = 0;
@@ -42,4 +41,26 @@ bool IsSerialDataIncoming() {
   else {
     return false;
   }
+}
+
+String ChangeMode(String currentMode) {
+  String message;
+
+  if (IsSerialDataIncoming()) {
+    message = BuildMessage();
+    if (IsValidMessage(message)) {
+      Serial.println(message);
+      return message;
+    }
+  }
+  else
+  {
+    return currentMode;
+  }
+}
+
+void PrintValuesToSerialPort(float value, String type){
+  Serial.print(type);
+  Serial.print(": ");
+  Serial.println(value);
 }
