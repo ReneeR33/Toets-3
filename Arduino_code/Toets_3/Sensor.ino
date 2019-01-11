@@ -22,6 +22,10 @@ float Humidity(){
 
 //converts Celsius to Fahrenheit
 float ToFahrenheit(float value){
+<<<<<<< HEAD
  value = (value * 1.8) + 32;
+=======
+ value = (value * 1,8) + 32;
+>>>>>>> parent of 72261b1... fahrenheit bug gefixed
  return value;
 }
