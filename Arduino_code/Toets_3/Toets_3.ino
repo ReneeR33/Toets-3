@@ -1,5 +1,6 @@
+
 //setting the default mode
-String currentInput = "TEMPERATURE_C";
+String currentMode = "TEMPERATURE_C";
 
 void setup() {
   Serial.begin(9600);
@@ -9,24 +10,23 @@ void setup() {
 
 
 void loop() {
-  currentInput = ChangeMode(currentInput);
+  currentMode = ChangeMode(currentMode);
   //Temperature mode
-  if ((currentInput == "TEMPERATURE_C") || (currentInput == "TEMPERATURE_F")) {
+  if ((currentMode == "TEMPERATURE_C") || (currentMode == "TEMPERATURE_F")) {
     float temp = Temperature();
     ChangeColorT(temp);
-    //Check if the unit should be fahrenheit
-    if(currentInput == "TEMPERATURE_F"){
+    if (currentMode == "TEMPERATURE_F") {
       temp = ToFahrenheit(temp);
     }
     ValueToScreen(temp);
-    PrintValuesToSerialPort(temp, currentInput);
+    PrintValuesToSerialPort(temp, currentMode);
   }
 
   //Humidity mode
-  else if (currentInput == "HUMIDITY") {
+  else if (currentMode == "HUMIDITY") {
     float hum = Humidity();
     ChangeColorH(hum);
     ValueToScreen(hum);
-    PrintValuesToSerialPort(hum, currentInput);
+    PrintValuesToSerialPort(hum, currentMode);
   }
 }
