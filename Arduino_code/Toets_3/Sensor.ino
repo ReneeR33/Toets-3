@@ -19,6 +19,6 @@ float Humidity(){
 }
 
 float ToFahrenheit(float value){
- value = (value * 1,8) + 32;
+ value = (value * 1.8) + 32.0;
  return value;
 }

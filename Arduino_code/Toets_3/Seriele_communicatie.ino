@@ -69,8 +69,3 @@ void PrintValuesToSerialPort(float value, String type) {
   }
   previousValue = value;
 }
-
-void PrintUnitToSerialPort(String unit) {
-  Serial.print("UNIT: ");
-  Serial.println(unit);
-}

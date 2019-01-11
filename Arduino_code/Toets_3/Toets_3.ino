@@ -1,4 +1,4 @@
-String currentInput = "TEMPERATURE_F";
+String currentInput = "TEMPERATURE_C";
 
 void setup() {
   Serial.begin(9600);
