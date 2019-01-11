@@ -62,7 +62,7 @@ String ChangeMode(String currentMode) {
 }
 
 void PrintValuesToSerialPort(float value, String type) {
-  if ((previousValue != NULL) && (previousValue != value)) {
+  if (previousValue != value) {
     Serial.print(type);
     Serial.print(": ");
     Serial.println(value);

@@ -17,3 +17,8 @@ float Humidity(){
   float h = dht.readHumidity();
   return h;
 }
+
+float ToFahrenheit(float value){
+ (value / 1,8) + 32;
+ return value;
+}
