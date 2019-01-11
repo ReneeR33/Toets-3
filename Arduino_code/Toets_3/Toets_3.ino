@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //setting the default mode
+=======
+>>>>>>> parent of 14dc7d5... Naam veranderd
 =======
 >>>>>>> parent of 14dc7d5... Naam veranderd
 =======
@@ -18,11 +21,17 @@ void loop() {
   currentInput = ChangeMode(currentInput);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   //Temperature mode
   if ((currentInput == "TEMPERATURE_C") || (currentInput == "TEMPERATURE_F")) {
     float temp = Temperature();
     ChangeColorT(temp);
     //Check if the unit should be fahrenheit
+=======
+  if ((currentInput == "TEMPERATURE_C") || (currentInput == "TEMPERATURE_F")) {
+    float temp = Temperature();
+    ChangeColorT(temp);
+>>>>>>> parent of 14dc7d5... Naam veranderd
 =======
   if ((currentInput == "TEMPERATURE_C") || (currentInput == "TEMPERATURE_F")) {
     float temp = Temperature();
@@ -41,8 +50,11 @@ void loop() {
   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   //Humidity mode
+=======
+>>>>>>> parent of 14dc7d5... Naam veranderd
 =======
 >>>>>>> parent of 14dc7d5... Naam veranderd
 =======
