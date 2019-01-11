@@ -2,9 +2,6 @@ String currentMode = "TEMPERATURE";
 
 void setup() {
   Serial.begin(9600);
-  //if (IsSerialDataIncoming()) {
-  //message = BuildMessage();
-  //}
   StartMeasuring();
   StartScreen();
 }
@@ -19,7 +16,9 @@ void loop() {
     PrintValuesToSerialPort(temp, currentMode);
   }
   else if (currentMode == "HUMIDITY") {
-    ValueToScreen(Humidity());
-    ChangeColorH(Humidity());
+    float hum = Humidity();
+    ValueToScreen(hum);
+    ChangeColorH(hum);
+    PrintValuesToSerialPort(hum, currentMode);
   }
 }
