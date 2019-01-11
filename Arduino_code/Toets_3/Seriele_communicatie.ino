@@ -26,7 +26,7 @@ String BuildMessage() {
 }
 
 bool IsValidMessage(String input) {
-  if (input == "TEMPERATURE" || input == "HUMIDITY") {
+  if (input == "TEMPERATURE" || input == "HUMIDITY" || input == "CELSIUS" || input == "FAHRENHEIT") {
     return true;
   }
   else {
@@ -63,4 +63,9 @@ void PrintValuesToSerialPort(float value, String type){
   Serial.print(type);
   Serial.print(": ");
   Serial.println(value);
+}
+
+void PrintUnitToSerialPort(String unit){
+  Serial.print("UNIT: ");
+  Serial.println(unit);
 }
