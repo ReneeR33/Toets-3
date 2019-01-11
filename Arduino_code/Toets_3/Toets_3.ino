@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //setting the default mode
 =======
 >>>>>>> parent of 14dc7d5... Naam veranderd
@@ -13,6 +14,9 @@
 =======
 >>>>>>> parent of 14dc7d5... Naam veranderd
 String currentInput = "TEMPERATURE_C";
+=======
+String currentInput = "TEMPERATURE_F";
+>>>>>>> parent of 72261b1... fahrenheit bug gefixed
 =======
 String currentInput = "TEMPERATURE_F";
 >>>>>>> parent of 72261b1... fahrenheit bug gefixed
